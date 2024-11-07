@@ -16,6 +16,9 @@ playbutton.onclick = function () {
         for (let i = 0; i < colorButtons.length; i = i + 1) {
 
             if (colorButtons[i][1] == col) {
+                
+                audios[colorButtons[i][0]].pause()
+                audios[colorButtons[i][0]].currentTime=0
                 audios[colorButtons[i][0]].play()
 
 
