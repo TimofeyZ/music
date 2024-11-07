@@ -12,17 +12,22 @@ let buttonids = []
 let playbutton = document.querySelector("#play")
 playbutton.onclick = function () {
     console.log("play");
-    setInterval(()=>{
-        for (let i = 0; i < colorButtons.length; i = i + 1 ){
-    
-            if (colorButtons[i][1]==col) {
-        audios[colorButtons[i][0]].play()
-        
-        
+    setInterval(() => {
+        for (let i = 0; i < colorButtons.length; i = i + 1) {
+
+            if (colorButtons[i][1] == col) {
+                audios[colorButtons[i][0]].play()
+
+
             }
+           
+                
         }
         col++
-    },1000)
+        if (col==15){
+            col= 0
+        }
+    }, 1000)
 
     if (isplaying == false) {
         playbutton.style.backgroundImage = "url('пауза.png')"
@@ -54,10 +59,10 @@ for (let i = 0; i < 135; i = i + 1) {
 
         if (button.getAttribute("data-color") == "no") {
             button.dataset.color = "yes"
-            colorButtons.push([Math.floor( i/15) , i%15])
+            colorButtons.push([Math.floor(i / 15), i % 15])
             buttonids.push(i)
-            console.log(colorButtons,buttonids);
-            
+            console.log(colorButtons, buttonids);
+
             if (i < 15) {
 
                 button.style.backgroundColor = colors[0]
@@ -90,9 +95,9 @@ for (let i = 0; i < 135; i = i + 1) {
         else {
 
             button.dataset.color = "no"
-            button.style.backgroundColor="whitesmoke"
-            colorButtons.splice(buttonids.indexOf(i),1)
-            buttonids.splice(buttonids.indexOf(i),1)
+            button.style.backgroundColor = "whitesmoke"
+            colorButtons.splice(buttonids.indexOf(i), 1)
+            buttonids.splice(buttonids.indexOf(i), 1)
         }
     }
 

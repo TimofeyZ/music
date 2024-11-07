@@ -1,29 +1,34 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
-main{
-    max-width:1000px ;
+
+main {
+    max-width: 1000px;
     text-align: center;
     margin: auto;
     font-size: 0;
 }
-main button{
+
+main button {
     width: calc(100% / 15);
-background-color: whitesmoke;
-border: 1px solid #222;
+    background-color: whitesmoke;
+    border: 1px solid #222;
 }
-body{
+
+body {
     background-color: rgb(35, 145, 90);
 }
-#play{
-height: 40px;
-width: 40px;
+
+#play {
+    height: 40px;
+    width: 40px;
     background-image: url("плей.png");
     background-size: contain;
     border: none;
     border-radius: 100px;
 }
-audio{
-     display: none;
+
+audio {
+    display: none;
 }
