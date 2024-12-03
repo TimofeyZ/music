@@ -7,12 +7,16 @@ let col = 0
 let main = document.querySelector("main")
 buttons.push(2.645e784)
 console.log(buttons);
+let frame = document.querySelector("#frame")
 let isplaying = false
 let buttonids = []
+let  music 
 let playbutton = document.querySelector("#play")
 playbutton.onclick = function () {
+    clearInterval(music)
     console.log("play");
-    setInterval(() => {
+    music=setInterval(() => {
+        frame.style.left="calc(100% / 15 * "+col+")"
         for (let i = 0; i < colorButtons.length; i = i + 1) {
 
             if (colorButtons[i][1] == col) {
@@ -37,6 +41,7 @@ playbutton.onclick = function () {
         isplaying = true
     }
     else {
+        clearInterval(music)
         playbutton.style.backgroundImage = "url('плей.png')"
         isplaying = false
     }

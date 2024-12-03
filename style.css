@@ -8,6 +8,9 @@ main {
     text-align: center;
     margin: auto;
     font-size: 0;
+    /* Нужно, чтобы frame выравнивался по main, а не по экрану */
+    position: relative;
+
 }
 
 main button {
@@ -31,4 +34,11 @@ body {
 
 audio {
     display: none;
+}
+#frame{
+    box-shadow: 0 0 10px blue;
+    position: absolute;
+    width: calc(100% / 15);
+    height: 100%;
+    pointer-events: none;
 }
